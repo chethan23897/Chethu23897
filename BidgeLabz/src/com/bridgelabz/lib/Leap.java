@@ -8,11 +8,22 @@ public class Leap {
 		Scanner sc=new Scanner(System.in);
 		System.out.println("Enter the year");
 		int n=sc.nextInt();
+		boolean l=leap(n);
+		if(l)
+		{
+			System.out.println("Leap year");
+		}else
+		{
+			System.out.println("Not leap year");
+		}
+	}	
+		public static boolean leap(int n)
+		{
 		if(n>=1582)
 		{
 			if(n%4==00&&n%100!=0)
 			{
-				System.out.println("Leap");
+				return true;
 			}
 			else
 			{
@@ -20,15 +31,15 @@ public class Leap {
 
 				if(n%400==0)
 
-					System.out.println("Leap year");
+					return true;
 
-				else
-
-					System.out.println("NOt Leap year");
+			
 
 
 
 			}
 		}
-	}
+		return false;
+		}
+	
 }
